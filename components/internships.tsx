@@ -11,6 +11,18 @@ import ScrollReveal from "./scroll-reveal"
 
 const internships = [
   {
+    company: "Innovate Intern",
+    position: "Full Stack Development Intern",
+    period: "May 2025 - Present",
+    project: "Web Application Development",
+    description:
+      "Designed and developed a responsive and visually appealing portfolio website using HTML, CSS, and Bootstrap.Emphasized user experience, smooth navigation, and cross-device compatibility. Improved UI/UX performance and responsiveness across devices by 40% using Bootstrap grid system.",
+    technologies: ["React", "Node.js", "MongoDB", "Express"],
+    skills: ["Frontend Development", "Backend Integration", "Database Management"],
+    color: "rgba(59, 130, 246, 0.4)", // blue
+    logo: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=2073&auto=format&fit=crop",
+  },
+  {
     company: "IBM",
     position: "AI & Cloud Computing Intern",
     period: "Feb 2024 - Mar 2024",
@@ -69,7 +81,7 @@ export default function Internships() {
             >
               <motion.div whileHover={{ scale: 1.01, transition: { duration: 0.2 } }}>
                 <GradientBorder
-                  animate={true}
+                  animate={false}
                   borderWidth={2}
                   gradientColors={[
                     internship.color.replace("0.4", "0.6"),
