@@ -5,10 +5,27 @@ import { useInView } from "framer-motion"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ExternalLink } from "lucide-react"
-import TiltCard from "./tilt-card"
 import ScrollReveal from "./scroll-reveal"
 
 const certifications = [
+  {
+    title: "Electronic Arts – Software Engineering Job Simulation",
+    issuer: "Forage",
+    link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/j43dGscQHtJJ57N54/a77WE3de8qrxWferQ_j43dGscQHtJJ57N54_W6b7NQxvpx7wKWcRh_1746761442164_completion_certificate.pdf",
+    icon: "https://media.licdn.com/dms/image/C4D0BAQGexnfBxeEG-g/company-logo_200_200/0/1635988655150?e=1718236800&v=beta&t=FGvM5wpYrTbHUQzrUOJgFYnKSZC-QKsVjZpQDvNWl_c",
+    color: "rgba(59, 130, 246, 0.4)", // blue
+    date: "May 2025",
+    credentialId: "dnHQ2qSacDcJuyAKN",
+  },
+  {
+    title: "Skyscanner – Front-End Software Engineering",
+    issuer: "Forage",
+    link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/skoQmxqhtgWmKv2pm/km4rw7dihDr3etqom_skoQmxqhtgWmKv2pm_W6b7NQxvpx7wKWcRh_1746777010327_completion_certificate.pdf",
+    icon: "https://media.licdn.com/dms/image/C4D0BAQGexnfBxeEG-g/company-logo_200_200/0/1635988655150?e=1718236800&v=beta&t=FGvM5wpYrTbHUQzrUOJgFYnKSZC-QKsVjZpQDvNWl_c",
+    color: "rgba(139, 92, 246, 0.4)", // purple
+    date: "May 2025",
+    credentialId: "iJ5PhBffGRiYaB3uv",
+  },
   {
     title: "Prompt Design in Vertex AI",
     issuer: "Google",
@@ -88,39 +105,41 @@ export default function Certifications() {
               delay={0.2 + index * 0.05}
               direction={index % 3 === 0 ? "left" : index % 3 === 1 ? "up" : "right"}
             >
-              <TiltCard glowColor={cert.color} scale={1.03}>
-                <Card className="h-full flex flex-col border border-primary/10 bg-card/50 backdrop-blur-sm">
-                  <CardHeader className="pb-2">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-md bg-white p-2 flex items-center justify-center">
-                        <img
-                          src={cert.icon || "/placeholder.svg"}
-                          alt={`${cert.issuer} logo`}
-                          className="w-full h-full object-contain"
-                        />
-                      </div>
-                      <div>
-                        <CardTitle className="text-lg">{cert.title}</CardTitle>
-                        <p className="text-sm text-muted-foreground mt-1">Issued by {cert.issuer}</p>
-                      </div>
+              <Card className="h-full flex flex-col border border-primary/10 bg-card/50 backdrop-blur-sm hover:shadow-md transition-shadow duration-300">
+                <CardHeader className="pb-2">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-md bg-white p-2 flex items-center justify-center">
+                      <img
+                        src={cert.icon || "/placeholder.svg"}
+                        alt={`${cert.issuer} logo`}
+                        className="w-full h-full object-contain"
+                      />
                     </div>
-                  </CardHeader>
-                  <CardContent className="flex-grow"></CardContent>
-                  <CardFooter>
-                    <Button asChild variant="outline" size="sm" className="w-full">
-                      <a
-                        href={cert.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-1"
-                      >
-                        <ExternalLink className="h-4 w-4" />
-                        View Certificate
-                      </a>
-                    </Button>
-                  </CardFooter>
-                </Card>
-              </TiltCard>
+                    <div>
+                      <CardTitle className="text-lg">{cert.title}</CardTitle>
+                      <p className="text-sm text-muted-foreground mt-1">Issued by {cert.issuer}</p>
+                      {cert.date && <p className="text-xs text-muted-foreground mt-1">{cert.date}</p>}
+                      {cert.credentialId && (
+                        <p className="text-xs text-muted-foreground mt-1">Credential ID: {cert.credentialId}</p>
+                      )}
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent className="flex-grow"></CardContent>
+                <CardFooter>
+                  <Button asChild variant="outline" size="sm" className="w-full">
+                    <a
+                      href={cert.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-1"
+                    >
+                      <ExternalLink className="h-4 w-4" />
+                      View Certificate
+                    </a>
+                  </Button>
+                </CardFooter>
+              </Card>
             </ScrollReveal>
           ))}
         </div>
