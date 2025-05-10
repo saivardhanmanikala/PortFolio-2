@@ -21,6 +21,16 @@ const projects = [
     color: "rgba(59, 130, 246, 0.4)", // blue
   },
   {
+    title: "To-Do List Web Application",
+    description:
+      "Developed a feature-rich To-Do List application using HTML, CSS, and JavaScript. The app allows users to add, edit, delete, and manage tasks with a clean, user-friendly interface. Implemented state management for task persistence and responsive design for cross-device compatibility.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    githubLink: "https://github.com/saivardhanmanikala/To-Do-List.git",
+    demoLink: "https://saivardhanmanikala.github.io/To-Do-List/",
+    image: "https://images.unsplash.com/photo-1540350394557-8d14678e7f91?q=80&w=2032&auto=format&fit=crop",
+    color: "rgba(236, 72, 153, 0.4)", // pink
+  },
+  {
     title: "Medical Health Insurance Cost Estimator",
     description:
       "A machine learning model using XGBoost to predict insurance premiums based on factors like age, BMI, smoking habits, and region. Helps insurance companies and individuals get accurate premium estimates with 96% accuracy.",
